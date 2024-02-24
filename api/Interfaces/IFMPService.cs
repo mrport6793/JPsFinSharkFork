@@ -4,10 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using api.Models;
 
-namespace api.Interfaces
+namespace api.Interfaces;
+
+public interface IFMPService
 {
-    public interface IFMPService
-    {
-        Task<Stock> FindStockBySymbolAsync(string symbol);
-    }
+    Task<Stock> FindStockBySymbolAsync(string symbol);
 }
