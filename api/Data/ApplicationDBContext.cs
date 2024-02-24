@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using api.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -38,19 +34,21 @@ public class ApplicationDBContext : IdentityDbContext<AppUser>
             .HasForeignKey(p => p.StockId);
 
 
-        List<IdentityRole> roles = new List<IdentityRole>
-        {
+        List<IdentityRole> roles =
+        [
             new IdentityRole
             {
                 Name = "Admin",
                 NormalizedName = "ADMIN"
             },
+
             new IdentityRole
             {
                 Name = "User",
                 NormalizedName = "USER"
-            },
-        };
+            }
+
+        ];
         builder.Entity<IdentityRole>().HasData(roles);
     }
 }

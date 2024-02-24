@@ -1,4 +1,3 @@
-using api.Data;
 using api.Dtos.Stock;
 using api.Helpers;
 using api.Interfaces;
@@ -10,9 +9,8 @@ namespace api.Controllers;
 
 [Route("api/stock")]
 [ApiController]
-public class StockController(ApplicationDBContext context, IStockRepository stockRepo) : ControllerBase
+public class StockController(IStockRepository stockRepo) : ControllerBase
 {
-    private readonly ApplicationDBContext _context = context;
 
     [HttpGet]
     [Authorize]

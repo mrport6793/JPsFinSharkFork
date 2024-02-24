@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using api.Dtos.Comment;
 using api.Models;
 
@@ -17,7 +13,7 @@ public static class CommentMapper
             Title = commentModel.Title,
             Content = commentModel.Content,
             CreatedOn = commentModel.CreatedOn,
-            CreatedBy = commentModel.AppUser.UserName,
+            CreatedBy = commentModel.AppUser.UserName ?? string.Empty,
             StockId = commentModel.StockId
         };
     }
